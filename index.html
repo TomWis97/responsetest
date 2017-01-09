@@ -1,0 +1,33 @@
+<DOCTYPE html>
+<html>
+    <head>
+        <title>Response timing test.</title>
+	<style>
+             body {
+		text-align: center;
+	     }
+	</style>
+    </head>
+    <body>
+        <h1>Response timing test.</h1>
+        <p>Press space to change color.</p>
+        <button type="button" onClick="changeBackground()">Change background color</button>
+        <script>
+            var state;
+            function changeBackground(){
+                if (state == "blue") {
+                    document.body.style.backgroundColor = "red";
+                    state = "red";
+                } else {
+                    document.body.style.backgroundColor = "blue";
+		    state = "blue";
+                }
+	    }
+            document.body.onkeypress = function(e){
+                if(e.keyCode == 32) {
+                    changeBackground();
+                }
+            }
+        </script>
+    </body>
+</html>
